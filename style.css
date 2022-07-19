@@ -1,3 +1,17 @@
+.grid {
+    height: 600px;
+    width: 600px;
+    display: grid;
+}
+
+
+
+
+
+
+
+
+
 /* :root {
     --grid-cols: 1;
     --grid-rows: 1;

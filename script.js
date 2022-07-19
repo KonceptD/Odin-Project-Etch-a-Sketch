@@ -4,10 +4,16 @@
 // TODO: Hover effect of a color change when the mouse passes through
 // TODO: Button on top to prompt user for no. of squares - max 100 (must replace the old grid)
 
+// Finds grid div element and creates the grid board
+const grid = document.querySelector(".grid")
+grid.style.gridTemplateColumns = "repeat(16, 1fr)"
+grid.style.gridTemplateRows = "repeat(16, 1fr)"
 
-const container= document.getElementById("container")
-
-
+for (let i = 0; i < 256; i++) {
+    let square = document.createElement("div");
+     square.style.backgroundColor = "white";
+     grid.insertAdjacentElement("beforeend", square);
+}
 
 
 
