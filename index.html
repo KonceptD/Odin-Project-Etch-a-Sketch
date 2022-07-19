@@ -15,10 +15,10 @@
         <div class="content">
             <div class="grid"></div>
             <div class="buttons">
-                <buttons>Black</buttons>
-                <buttons>White</buttons>
-                <buttons>Random</buttons>
-                <buttons>Reset</buttons>
+                <button onclick="colorChange('black')">Black</button>
+                <button onclick="colorChange('white')">Eraser</button>
+                <button onclick="colorChange('random')">Random</button>
+                <button onclick="resetGrid()">Reset</button>
             </div>
             <div>
                 <input type="text" placeholder="Grid Size" value="16" onchange="setSize(this.value)"/>

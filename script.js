@@ -1,9 +1,13 @@
-// TODO: 16x16 square divs using JS
-// TODO: Append them to a parent container
-// TODO: Convert divs to a grid
-// TODO: Hover effect of a color change when the mouse passes through
-// TODO: Button on top to prompt user for no. of squares - max 100 (must replace the old grid)
+// * TODO: 16x16 square divs using JS
+// * TODO: Append them to a parent container
+// * TODO: Convert divs to a grid
+//  TODO: Reset button
+//  TODO: Random color button
+//  TODO: Beautify the UI
+//  TODO: Hover effect of a color change when the mouse passes through
+// * TODO: Button on top to prompt user for no. of squares - max 100 (must replace the old grid)
 
+let color = "black";
 
 function setGrid(size) {
 
@@ -21,14 +25,13 @@ function setGrid(size) {
     // Creates the Grid using divs including event listener for the mouseover
     for (let i = 0; i < (size * size); i++) {
         let square = document.createElement("div");
-        square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "black";
-        });
+        square.addEventListener("mouseover", colorSquare);
         square.style.backgroundColor = "white";
         grid.insertAdjacentElement("beforeend", square);
     }
 }
 
+// Sets the Grid at the 16x16 as specified
 setGrid(16);
 
 // Sets the size and ensures user only inputs between 2-100
@@ -40,6 +43,29 @@ function setSize(input) {
         console.log("Choose between 2 - 100 for the grid")
     }
 } 
+
+// Function for the "Random" button
+function colorSquare() {
+    if (color === "random") {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } 
+    else {
+        this.style.backgroundColor = color;
+    }
+}
+
+// Function for changing the color 
+function colorChange(selection) {
+    color = selection;
+}
+
+// Function for the "Reset" button
+function resetGrid() {
+    const grid = document.querySelector(".grid")  
+    let squares = grid.querySelectorAll("div");
+    // Decided to change the squares to be white instead of removing it
+    squares.forEach((div) => div.style.backgroundColor = "white");
+}
 
 
 
@@ -74,5 +100,3 @@ function setSize(input) {
 //     makeRows(16,16);
 // }
 // reset.addEventListener('click', resetButton)
-
-
