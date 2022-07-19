@@ -1,13 +1,23 @@
 // * TODO: 16x16 square divs using JS
 // * TODO: Append them to a parent container
 // * TODO: Convert divs to a grid
-//  TODO: Reset button
-//  TODO: Random color button
-//  TODO: Beautify the UI
-//  TODO: Hover effect of a color change when the mouse passes through
+// * TODO: Reset button
+// * TODO: Random color button
+// * TODO: Beautify the UI
+// * TODO: Hover effect of a color change when the mouse passes through
 // * TODO: Button on top to prompt user for no. of squares - max 100 (must replace the old grid)
 
+/*
+    UPDATE: This project has een completed. I wanted to add a color well and have the mouseover change color but I couldn't get it after wrecking my brain. 
+    I will make sure I come back to this.
+    
+    Signed: KonceptD (KJ) 19/07/2022 - 16:33pm
+*/
+
+
+
 let color = "black";
+// const inputColor = document.querySelector("#colorbtn");
 
 function setGrid(size) {
 
@@ -67,6 +77,22 @@ function resetGrid() {
     squares.forEach((div) => div.style.backgroundColor = "white");
 }
 
+// inputColor.addEventListener("inu", () => {
+//     const selectedColor = this.currentTarget.value;
+//     const grid = document.querySelector(".grid")  
+//     let square = grid.querySelectorAll("div");
+//     inputColorVal = selectedColor;
+//     square.style.backgroundColor = colorSquare(inputColorVal); 
+   
+// });
+// inputColor.addEventListener("input", () => 
+// })
+
+// function colorPicker() {
+//    color = this.style.backgroundColor;
+//    colorChange(color);
+    
+// }
 
 
 
