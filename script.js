@@ -4,17 +4,42 @@
 // TODO: Hover effect of a color change when the mouse passes through
 // TODO: Button on top to prompt user for no. of squares - max 100 (must replace the old grid)
 
-// Finds grid div element and creates the grid board
-const grid = document.querySelector(".grid")
-grid.style.gridTemplateColumns = "repeat(16, 1fr)"
-grid.style.gridTemplateRows = "repeat(16, 1fr)"
 
-for (let i = 0; i < 256; i++) {
-    let square = document.createElement("div");
-     square.style.backgroundColor = "white";
-     grid.insertAdjacentElement("beforeend", square);
+function setGrid(size) {
+
+    // Finds grid div element
+    const grid = document.querySelector(".grid")
+    // removes all the previous divs on the grid
+
+    let squares = grid.querySelectorAll("div");
+    squares.forEach((div) => div.remove());
+
+    // Sets size for grid
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
+
+    // Creates the Grid using divs including event listener for the mouseover
+    for (let i = 0; i < (size * size); i++) {
+        let square = document.createElement("div");
+        square.addEventListener("mouseover", () => {
+            square.style.backgroundColor = "black";
+        });
+        square.style.backgroundColor = "white";
+        grid.insertAdjacentElement("beforeend", square);
+    }
 }
 
+setGrid(16);
+
+// Sets the size and ensures user only inputs between 2-100
+function setSize(input) {
+    if (input >= 2 && input <= 100) {
+        setGrid(input)
+    }
+    else {
+        console.log("Choose between 2 - 100 for the grid")
+    }
+} 
 
 
 
