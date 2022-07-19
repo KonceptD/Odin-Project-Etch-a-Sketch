@@ -9,16 +9,21 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Etch-A-Sketch</h1>
-    <br>
-    <div class="buttons">
-        <button id="reset">Reset</button>
-
-    </div>
-    <div class="container-wrapper">
-        <div id="container">
-
+    <div class="flex-container">
+        <div class="title"><h1>Etch-A-Sketch</h1></div>
+        <div class="content">
+            <div class="grid"></div>
+            <div class="buttons">
+                <buttons>Black</buttons>
+                <buttons>White</buttons>
+                <buttons>Random</buttons>
+                <buttons>Reset</buttons>
+            </div>
+            <div>
+                <input type="text" placeholder="Grid Size" value="16" />
+                <button>Size</button>
+            </div>
         </div>
-    </div>     
+    </div>
 </body>
 </html>

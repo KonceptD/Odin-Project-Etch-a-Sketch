@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --grid-cols: 1;
     --grid-rows: 1;
   }
@@ -11,6 +11,7 @@
     border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
+    align-items: center;
 }
 
   #container {
@@ -24,4 +25,4 @@
     padding: 1em;
     border: 1px solid #ddd;
     text-align: center;
-  }
+  } */
